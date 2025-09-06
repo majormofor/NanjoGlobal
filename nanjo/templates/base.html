@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nanjo Global Logistics Limited</title>
+    <!-- boot -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="flex flex-col min-h-screen font-sans text-gray-700">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow fixed w-full z-50">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="text-blue-700 font-bold text-2xl" href="{% url 'core:home' %}">Nanjo Global</a>
+        <div class="hidden lg:flex space-x-6">
+          <a href="{% url 'core:home' %}" class="hover:text-blue-700">Home</a>
+          <a href="{% url 'core:about' %}" class="hover:text-blue-700">About</a>
+          <a href="{% url 'core:services' %}" class="hover:text-blue-700">Services</a>
+          <a href="{% url 'core:contact' %}" class="hover:text-blue-700">Contact</a>
+          {% if user.is_authenticated %} 
+          <a href="{% url 'crm:dashboard' %}" class="hover:text-blue-700">Dashboard</a>
+          <a href="{% url 'crm:customer_list' %}" class="hover:text-blue-700">Customer</a>
+          <a href="{% url 'crm:customer_create' %}" class="hover:text-blue-700">Add Customer</a>
+          <a href="{% url 'crm:order_create' %}" class="hover:text-blue-700">Add Order</a>
+
+          <form method="post" action="{% url 'logout' %}" class="inline">
+            {% csrf_token %}
+            <button type="submit" class="hover:text-blue-700">Logout</button>
+          </form>
+          {% else %}
+          {% endif %}
+        </div>
+        <!-- Mobile button -->
+        <button id="nav-toggle" class="lg:hidden text-gray-700 text-2xl">☰</button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="nav-content" class="hidden lg:hidden bg-white shadow">
+        <ul class="flex flex-col space-y-2 px-6 py-4">
+          <li><a href="{% url 'core:home' %}" class="hover:text-blue-700">Home</a></li>
+          <li><a href="{% url 'core:about' %}" class="hover:text-blue-700">About</a></li>
+          <li><a href="{% url 'core:services' %}" class="hover:text-blue-700">Services</a></li>
+          <li><a href="{% url 'core:contact' %}" class="hover:text-blue-700">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow mt-20">
+      {% if messages %}
+        <div class="container mx-auto px-6 space-y-4">
+          {% for message in messages %}
+          <div class="p-4 rounded bg-gray-200">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 py-12 mt-12">
+      <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h5 class="text-xl font-bold text-white mb-4">Nanjo Global Logistics</h5>
+          <p>No. 6 Caulcrick Road, Apapa, Lagos, Nigeria</p>
+          <p class="mt-2">+2348030969523, +2347082470449</p>
+        </div>
+        <div>
+          <h6 class="font-semibold mb-4">Quick Links</h6>
+          <ul class="space-y-2">
+            <li><a href="{% url 'core:home' %}" class="hover:text-white">Home</a></li>
+            <li><a href="{% url 'core:about' %}" class="hover:text-white">About</a></li>
+            <li><a href="{% url 'core:services' %}" class="hover:text-white">Services</a></li>
+            <li><a href="{% url 'core:contact' %}" class="hover:text-white">Contact</a></li>
+            <li><a href="{% url 'login' %}" class="hover:text-white">NJG</a></li>
+
+
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold mb-4">Follow Us</h6>
+          <div class="flex space-x-4">
+            <a href="https://facebook.com/Nanjoglobal" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/Nanjoglobal" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/Nanjoglobal" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 text-gray-400 text-sm">&copy; {{ now|date:"Y" }} Nanjo Global Logistics. All rights reserved.</div>
+    </footer>
+
+    <!-- Navbar toggle script -->
+    <script>
+      const navToggle = document.getElementById('nav-toggle');
+      const navContent = document.getElementById('nav-content');
+      navToggle.addEventListener('click', () => {
+        navContent.classList.toggle('hidden');
+      });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    {% block extra_scripts %}{% endblock %}
+
+  </body>
+</html>

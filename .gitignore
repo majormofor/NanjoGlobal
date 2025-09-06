@@ -1,0 +1,7 @@
+
+# Virtual env
+.venv/
+
+# Django stuff
+db.sqlite3
+/media/

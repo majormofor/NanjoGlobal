@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mx-auto px-6 py-16">
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-8">
+
+      <!-- About Section -->
+      <div class="space-y-4">
+        <h2 class="text-4xl font-extrabold text-gray-800">About Nanjo Global Logistics</h2>
+        <div class="flex flex-col items-center justify-center bg-gray-100 rounded-xl p-6 mb-4">
+          <i class="fas fa-building text-primary text-6xl"></i>
+          <p class="mt-2 text-gray-600 font-medium">Our Headquarters in Apapa, Lagos</p>
+        </div>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Nanjo Global Logistics Limited is a leading Nigerian clearing and forwarding company based in Apapa, Lagos. We provide seamless logistics solutions tailored to importers and exporters across Africa and beyond.
+        </p>
+      </div>
+
+      <!-- Mission & Vision -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-bullseye text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-center mb-2">Our Mission</h3>
+          <p class="text-gray-600 text-center">
+            To deliver efficient, transparent, and reliable logistics services that empower businesses to thrive in the global marketplace.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-eye text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-center mb-2">Our Vision</h3>
+          <p class="text-gray-600 text-center">
+            To be Nigeria's most trusted logistics partner for international trade, recognized for excellence, innovation, and customer satisfaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div>
+        <h3 class="text-3xl font-bold mb-6">Our Core Values</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="flex items-start bg-gray-50 rounded-xl p-4 shadow hover:shadow-md transition">
+            <i class="fas fa-handshake text-primary text-3xl mr-4 mt-1"></i>
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-1">Integrity</h5>
+              <p class="text-gray-600 text-sm">Honest and transparent in all our dealings</p>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-gray-50 rounded-xl p-4 shadow hover:shadow-md transition">
+            <i class="fas fa-rocket text-primary text-3xl mr-4 mt-1"></i>
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-1">Speed</h5>
+              <p class="text-gray-600 text-sm">Fast and efficient service delivery</p>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-gray-50 rounded-xl p-4 shadow hover:shadow-md transition">
+            <i class="fas fa-star text-primary text-3xl mr-4 mt-1"></i>
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-1">Excellence</h5>
+              <p class="text-gray-600 text-sm">Commitment to quality in everything we do</p>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-gray-50 rounded-xl p-4 shadow hover:shadow-md transition">
+            <i class="fas fa-users text-primary text-3xl mr-4 mt-1"></i>
+            <div>
+              <h5 class="font-semibold text-gray-800 mb-1">Customer Success</h5>
+              <p class="text-gray-600 text-sm">Your success is our priority</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Facts Sidebar -->
+    <div class="space-y-6">
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+        <h4 class="text-2xl font-bold mb-4">Quick Facts</h4>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex items-center">
+            <i class="fas fa-calendar-alt text-primary text-xl mr-3"></i>
+            <span><strong>Established:</strong> 2010</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-map-marker-alt text-primary text-xl mr-3"></i>
+            <span><strong>Location:</strong> Apapa, Lagos, Nigeria</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-globe text-primary text-xl mr-3"></i>
+            <span><strong>Global Reach:</strong> 50+ Countries</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-ship text-primary text-xl mr-3"></i>
+            <span><strong>Annual Shipments:</strong> 1000+</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Optional Sidebar Image -->
+      <div class="overflow-hidden rounded-xl shadow-lg">
+        <img src="{% static 'images/fly6.jpg' %}" alt="Logistics Operations" class="w-full h-auto object-cover">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

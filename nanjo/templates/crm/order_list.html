@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Orders for {{ customer.name }}</h2>
+  <a href="{% url 'crm:order_create' %}" class="btn btn-primary">Add Order</a>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Status</th>
+        <th>Description</th>
+        <th>Created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for o in orders %}
+      <tr>
+        <td>{{ o.get_service_type_display }}</td>
+        <td>{{ o.get_status_display }}</td>
+        <td>{{ o.description|default:'-' }}</td>
+        <td>{{ o.created_at|date:"Y-m-d H:i" }}</td>
+        <td>
+          <a
+            href="{% url 'crm:order_update' o.id %}"
+            class="btn btn-sm btn-secondary"
+            >Edit</a
+          >
+          <a
+            href="{% url 'crm:order_delete' o.id %}"
+            class="btn btn-sm btn-outline-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5">No orders yet.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

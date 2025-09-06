@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Customers</h2>
+  <div>
+    <a href="{% url 'crm:customer_create' %}" class="btn btn-primary"
+      >Add Customer</a
+    >
+    <a href="{% url 'crm:order_create' %}" class="btn btn-outline-primary"
+      >Add Order</a
+    >
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>Orders</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in customers %}
+      <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.company }}</td>
+        <td>
+          <a href="{% url 'crm:order_list' c.id %}">{{ c.orders.count }}</a>
+        </td>
+        <td>
+          <a
+            href="{% url 'crm:customer_update' c.id %}"
+            class="btn btn-sm btn-secondary"
+            >Edit</a
+          >
+          <a
+            href="{% url 'crm:customer_delete' c.id %}"
+            class="btn btn-sm btn-outline-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">No customers yet.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+
+  <div class="contact-grid">
+
+    <!-- Contact Info Section -->
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to work with us? Reach out and we’ll get back to you as soon as possible.</p>
+      <p><strong>Address:</strong> No. 6 Caulcrick Road, Apapa, Lagos, Nigeria</p>
+      <p><strong>Phone:</strong> +2348030969523, +2347082470449</p>
+      <p>
+        <strong>Follow Us:</strong>
+        <a href="https://facebook.com/Nanjoglobal">Facebook</a> | 
+        <a href="https://twitter.com/Nanjoglobal">Twitter</a> | 
+        <a href="https://instagram.com/Nanjoglobal">Instagram</a>
+      </p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=No.+6+Caulcrick+Road,+Apapa,+Lagos,+Nigeria&output=embed"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* Grid layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 50px 0;
+}
+
+/* Contact Info Section */
+.contact-info {
+  background: #f0f8ff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h2 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.contact-info a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.map-container {
+  margin-top: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Contact Form Section */
+.contact-form {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.contact-form h2 {
+  margin-bottom: 25px;
+}
+
+/* Form fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+/* Textarea specific */
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.contact-form button {
+  width: 100%;
+  background: #facc15;
+  color: #1d4ed8;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{% endblock %}

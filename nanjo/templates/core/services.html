@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-16">
+
+  <!-- Section Title -->
+  <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+
+  <!-- Services Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- Service Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 p-6">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-600 text-white rounded-full p-4 mr-4 flex items-center justify-center">
+          <i class="fas fa-cogs fa-lg"></i>
+        </div>
+        <h4 class="text-xl font-semibold">Import & Export Clearing</h4>
+      </div>
+      <p class="mb-3 text-gray-700">
+        Expert customs clearance services for both import and export operations. We handle all documentation, compliance requirements, and ensure smooth processing through Nigerian customs.
+      </p>
+      <ul class="space-y-1 text-gray-700">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Documentation preparation</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Customs compliance</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Duty calculation</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Port clearance</li>
+      </ul>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 p-6">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-600 text-white rounded-full p-4 mr-4 flex items-center justify-center">
+          <i class="fas fa-plane fa-lg"></i>
+        </div>
+        <h4 class="text-xl font-semibold">Freight Forwarding</h4>
+      </div>
+      <p class="mb-3 text-gray-700">
+        Comprehensive freight forwarding solutions via air, sea, and land. We coordinate with global partners to ensure your cargo reaches its destination safely and on time.
+      </p>
+      <ul class="space-y-1 text-gray-700">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Air freight</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Sea freight</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Land transportation</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Multi-modal solutions</li>
+      </ul>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 p-6">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-600 text-white rounded-full p-4 mr-4 flex items-center justify-center">
+          <i class="fas fa-file-alt fa-lg"></i>
+        </div>
+        <h4 class="text-xl font-semibold">Customs Documentation</h4>
+      </div>
+      <p class="mb-3 text-gray-700">
+        Professional documentation services ensuring all customs requirements are met. We handle complex paperwork and regulatory compliance for smooth customs processing.
+      </p>
+      <ul class="space-y-1 text-gray-700">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Import permits</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Export licenses</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Certificate of origin</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Commercial invoices</li>
+      </ul>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 p-6">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-600 text-white rounded-full p-4 mr-4 flex items-center justify-center">
+          <i class="fas fa-warehouse fa-lg"></i>
+        </div>
+        <h4 class="text-xl font-semibold">Warehousing & Distribution</h4>
+      </div>
+      <p class="mb-3 text-gray-700">
+        Secure warehousing facilities and efficient distribution networks across Nigeria. We provide storage solutions and last-mile delivery services with real-time tracking.
+      </p>
+      <ul class="space-y-1 text-gray-700">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Secure storage</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Inventory management</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Order fulfillment</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Real-time tracking</li>
+      </ul>
+    </div>
+
+    <!-- Service Card -->
+    <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 p-6">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-600 text-white rounded-full p-4 mr-4 flex items-center justify-center">
+          <i class="fas fa-truck fa-lg"></i>
+        </div>
+        <h4 class="text-xl font-semibold">Delivery Solutions</h4>
+      </div>
+      <p class="mb-3 text-gray-700">
+        Comprehensive delivery services including express delivery, scheduled delivery, and specialized handling for sensitive cargo. We ensure your goods reach their final destination safely.
+      </p>
+      <ul class="space-y-1 text-gray-700">
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Express delivery</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Scheduled delivery</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Specialized handling</li>
+        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Proof of delivery</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CTA Section -->
+  <div class="text-center mt-16">
+    <h3 class="text-2xl font-bold mb-2">Ready to Get Started?</h3>
+    <p class="mb-4 text-gray-700">Contact us today for a free consultation and quote.</p>
+    <a href="{% url 'core:contact' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition">Get a Quote</a>
+  </div>
+
+</div>
+{% endblock %}
